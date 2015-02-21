@@ -1,0 +1,49 @@
+
+defaults:
+  layout: post
+  title: Frontmatter missing
+
+# THEME-SPECIFIC CONFIGURATION
+theme:
+  # Meta
+  title: Ashton-W
+  subtitle: iOS Developer
+  avatar: avatar.png
+  gravatar: e4a4976684e44675d92688b65cac7091 # email md5 hash
+  description: "A website with blog posts and pages" # used by search engines
+  # Header and footer text
+  header_text:
+  footer_text:
+  # Icons
+  rss: true
+  email_address: # full email address, e.g. "sam@example.com"
+  github: "Ashton-W"
+  linkedin:  # full URL
+  twitter: "AshtonDev"
+  # Scripts
+  google_analytics: UA-46079253-1
+  disqus_shortname:
+  # Localization strings
+  str_follow_on: "Follow on"
+  str_rss_follow: "Follow RSS feed"
+  str_email: "Email"
+  str_next: "Next"
+  str_prev: "Prev"
+  str_continue_reading: "Continue reading"
+  # Colors, typography and padding
+  # Open the "_sass > base" folder, and open "_variables.scss"
+
+# PAGINATION
+paginate: 5
+paginate_path: "blog/page:num"
+
+gems:
+ - jekyll-mentions
+ - jemoji
+
+# BUILD SETTINGS
+markdown: kramdown
+highlighter: pygments
+sass:
+  sass_dir: _sass
+  style: :compressed
