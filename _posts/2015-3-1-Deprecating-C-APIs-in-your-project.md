@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Deprecating C APIs in your project
 ---
 
