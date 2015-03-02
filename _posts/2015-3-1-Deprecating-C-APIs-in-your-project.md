@@ -18,3 +18,8 @@ This might not be a good idea, as framework headers can and do change between re
 I would at least put them in a seperate file, `ProjectDeprecations.h`, and use a macro to standardise and define the deprecated attribute.
 
 I haven't found a way to do this on Objective-C classes, maybe that's for the best.
+
+**Update from the Twitters**
+
+<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/AshtonDev">@ashtondev</a> for Objective-C: <a href="https://t.co/EsXqMcVes4">https://t.co/EsXqMcVes4</a></p>&mdash; Tony Arnold (@tonyarnold) <a href="https://twitter.com/tonyarnold/status/572181271289315328">March 1, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
