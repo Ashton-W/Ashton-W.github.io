@@ -19,3 +19,35 @@ Check out the **Advanced** settings to clean up some sub-directories too:
 ![Xcode Preferences Window Locations Advanced]({{ site.url }}/assets/xcode-preferences-locations-advanced.png)
 
 :thumbsup:
+
+---
+**Update**
+
+Some great feedback came through from Twitter.
+
+First I want to clarify. The only reason I recommend this configuration is for when problems aren't being fixed by a *Command-Shift-K* Clean in Xcode.
+
+Unit Tests not being recognised. Interface Builder Designables not building. Headers not being found.  
+Usually you can fix it with a clean, building for test, refreshing all views, or restarting Xcode. But sometimes it just won't give &mdash; and [I'm not the only one](https://github.com/kattrali/deriveddata-exterminator).
+
+Your milage may vary.
+
+---
+Then a tweet happened
+
+<blockquote class="twitter-tweet" lang="en"><p>I wrote about my old friend, DerivedData. My preferred preferences.&#10;<a href="http://t.co/hnSaItNqGl">http://t.co/hnSaItNqGl</a>&#10;<a href="https://twitter.com/hashtag/iOSDev?src=hash">#iOSDev</a></p>&mdash; Ashton (@AshtonDev) <a href="https://twitter.com/AshtonDev/status/572891890250485760">March 3, 2015</a></blockquote>
+
+[@tonyarnold](https://twitter.com/tonyarnold) and [@mokagio](https://twitter.com/mokagio) kicked off a discussion, pulling in [@joar_at_work](https://twitter.com/joar_at_work)
+
+<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/tonyarnold">@tonyarnold</a> Let me preface my other comments with: Everything is a tradeoff… <a href="https://twitter.com/AshtonDev">@AshtonDev</a> <a href="https://twitter.com/mokagio">@mokagio</a></p>&mdash; Joar Wingfors (@joar_at_work) <a href="https://twitter.com/joar_at_work/status/572973755997155330">March 4, 2015</a></blockquote>
+
+<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/tonyarnold">@tonyarnold</a> The default location provides correct behavior with no required user configuration. <a href="https://twitter.com/AshtonDev">@AshtonDev</a> <a href="https://twitter.com/mokagio">@mokagio</a></p>&mdash; Joar Wingfors (@joar_at_work) <a href="https://twitter.com/joar_at_work/status/572973804755922947">March 4, 2015</a></blockquote>
+
+<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/tonyarnold">@tonyarnold</a> The “next to the project” model doesn’t work out of the box when multiple projects contribute to the build. <a href="https://twitter.com/AshtonDev">@AshtonDev</a> <a href="https://twitter.com/mokagio">@mokagio</a></p>&mdash; Joar Wingfors (@joar_at_work) <a href="https://twitter.com/joar_at_work/status/572974149519339520">March 4, 2015</a></blockquote>
+
+<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/AshtonDev">@AshtonDev</a> Yeah, workspace-relative should provide the same benefit. <a href="https://twitter.com/tonyarnold">@tonyarnold</a> <a href="https://twitter.com/mokagio">@mokagio</a></p>&mdash; Joar Wingfors (@joar_at_work) <a href="https://twitter.com/joar_at_work/status/572975640703471616">March 4, 2015</a></blockquote>
+
+<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/AshtonDev">@AshtonDev</a> Don’t let that stand. Please try to analyze how you end up in these situations, and file bug reports! <a href="https://twitter.com/tonyarnold">@tonyarnold</a> <a href="https://twitter.com/mokagio">@mokagio</a></p>&mdash; Joar Wingfors (@joar_at_work) <a href="https://twitter.com/joar_at_work/status/572976862588084224">March 4, 2015</a></blockquote>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
