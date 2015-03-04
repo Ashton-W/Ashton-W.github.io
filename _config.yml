@@ -22,7 +22,7 @@ theme:
   twitter: "AshtonDev"
   # Scripts
   google_analytics: UA-46079253-1
-  disqus_shortname:
+  disqus_shortname: ashton-w
   # Localization strings
   str_follow_on: "Follow on"
   str_rss_follow: "Follow RSS feed"
