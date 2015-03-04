@@ -42,6 +42,8 @@ gems:
 
 # BUILD SETTINGS
 markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis"]
 highlighter: pygments
 sass:
   sass_dir: _sass
