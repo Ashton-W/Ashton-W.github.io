@@ -3,7 +3,7 @@ layout: post
 title: Xcode DerivedData
 ---
 
-The go-to fix for random build issues and bugs in Xcode is to delete the *DerivedData* directory.
+The go-to fix for random build issues and bugs in Xcode is to delete the *DerivedData* directory. The shortcut for that is holding alt/option with the **Product** menu open: *Clean Build Folder*, or the [keyboard shortcut `⌥⌘⇧K`][1]
 
 The venerable *DerivedData* directory is the Xcode equivalent of the *build* directory from your *Makefile* days. Except, by default it is not relative to your project source. Instead, it is in a unique (as in UUID) location under `~/Library/Developer/Xcode/`.
 
@@ -15,10 +15,12 @@ So let's change that default and take our *build* back.
 Open up Xcode's preferences window from the menu-bar, and change to the **Locations** tab. Change the **Derived Data** location to *Relative* as shown:
 ![Xcode Preferences Window Locations]({{ site.url }}/assets/xcode-preferences-locations.png)
 
-Check out the **Advanced** settings to clean up some sub-directories too:
+Under the **Advanced** settings you can change the *Build* directory. Be warned, if you change this Xcode will no longer *Clean Build Folder* for you with the [keyboard shortcut ⌥⌘⇧K][1]:
 ![Xcode Preferences Window Locations Advanced]({{ site.url }}/assets/xcode-preferences-locations-advanced.png)
 
 :thumbsup:
+
+[1]: keyboard shortcut ⌥⌘⇧K ( Option Cmd Shift K )
 
 ---
 **Update**
