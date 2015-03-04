@@ -27,6 +27,11 @@ header {
     letter-spacing: 0.1em;
     margin: 0;
     text-transform: uppercase;
+    a {
+      float: right;
+      color: rgba($text-color, .5);
+      letter-spacing: initial;
+    }
   }
 }
 .feature-image {

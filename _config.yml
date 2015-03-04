@@ -3,6 +3,9 @@ default:
   layout: post
   title: Frontmatter missing
 
+# MY WEIRD HACKS
+fork_post_url: "https://github.com/Ashton-W/Ashton-W.github.io/blob/master"
+
 # THEME-SPECIFIC CONFIGURATION
 theme:
   # Meta

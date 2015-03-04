@@ -9,6 +9,9 @@ layout: default
     <p class="meta">
     {{ page.date | date: "%B %-d, %Y" }}
     {% if page.author %} - {{ page.author }}{% endif %}
+    {% if site.fork_post_url %}
+    <a href="{{ site.fork_post_url }}/{{ page.path }}">view on github</a>
+    {% endif %}
     </p>
   </header>
 
