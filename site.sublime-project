@@ -11,6 +11,10 @@
 		{
 			"path": "_posts",
 			"name": "Posts"
+		},
+		{
+			"path": "_drafts",
+			"name": "Drafts"
 		}
 	]
 }
