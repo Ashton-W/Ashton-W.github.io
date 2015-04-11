@@ -34,6 +34,15 @@ header {
     }
   }
 }
+
+.highlight {
+  pre {
+    padding-top: .5em;
+    padding-bottom: .5em;
+  }
+  background-color: rgba($code-background-color, .02);
+}
+
 .feature-image {
   padding: 0%;
   .post-link {
