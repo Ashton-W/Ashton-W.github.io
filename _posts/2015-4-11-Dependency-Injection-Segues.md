@@ -3,17 +3,17 @@ layout: post
 title: Dependency Injection Segues
 ---
 
-Segues link ViewControllers together, they don't pass along any data (except layout data). So we have a tool to create and present our screens - how do we set it up with data?
+Segues link ViewControllers together however they don't provide us with a standard way to pass any data. This is a shame as it is an extremely convienient place to do so. So we have a tool to create and present our screens - how can we set it up with data in a convinient way to maximise the opportunity?
 
-ViewControllers are given an opportunity to set up each other in methods like `prepareForSegue:sender:`. But we don't want our ViewControllers tightly coupled.
+ViewControllers are given a few chances to set up each other in methods like `prepareForSegue:sender:` and their related counterparts. However we don't want to tightly couple our ViewControllers.
 
-Some argue that we don't get much from Segues if when we prepare, we cast it to a known type and initialise it anyway. Especially if you are performing the segue in code.
+It is debated that not much is gained from Segues if when in a prepare method, the viewController cast it to a known type and initialised anyway. Especially if the segue is performed in code.
 
-Here is an approach I've used to address this problem using **protocols**.
+Here is an approach I've found successful at addressing this problem by using a **protocol**.
 
 ---
 
-First we define a protocol to indicate an object can be assigned our Model. 
+First define a protocol to indicate an object can be assigned a Model.
 
 ```objc
 @protocol ModelAssignable <NSObject>
@@ -23,9 +23,9 @@ First we define a protocol to indicate an object can be assigned our Model.
 @end
 ```
 
-You could stop there. In your `prepareForSegue:` you can now simply check if the destination conforms to this protocol and if it does, assign the model object. Do this before any `segueIdentifier` checking – if you still have any.
+You could stop there. In `prepareForSegue:` you can now simply check if the destination conforms to this protocol and if it does, assign the model object. Do this before any `segueIdentifier` checking – if you still have any.
 
-I like to move this simple logic into a category on `UIStoryboardSegue`.
+I prefer to move this logic into a category on `UIStoryboardSegue` like so:
 
 ```objc
 @implementation UIStoryboardSegue (ModelAssignable)
@@ -51,7 +51,7 @@ I like to move this simple logic into a category on `UIStoryboardSegue`.
 @end
 ```
 
-I avoid having to subclass container ViewControllers by also checking if the destination is a UINavigationController, UISplitViewController, etc.
+You can avoid having to subclass container ViewControllers by also checking if the destination viewController is a UINavigationController, UISplitViewController, etc.
 
 ```objc
 @implementation UIStoryboardSegue (FindProtocol)
@@ -90,7 +90,7 @@ I avoid having to subclass container ViewControllers by also checking if the des
 @end
 ```
 
-Now our `prepareForSegue:sender:`s look like this:
+Now `prepareForSegue:sender:` methods will look something like this:
 
 ```objc
 // screen to screen
