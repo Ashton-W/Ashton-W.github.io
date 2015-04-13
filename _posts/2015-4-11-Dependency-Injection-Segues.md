@@ -104,7 +104,7 @@ Now our `prepareForSegue:sender:`s look like this:
 // screen to more specific screen
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [segue assignModel:self.giantModel.model];
+    [segue assignModel:self.giantModel.subModel];
 }
 ```
 
