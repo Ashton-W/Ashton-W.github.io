@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Dependency Injection Segues
+tweet: https://twitter.com/AshtonDev/status/590363094381002752
 ---
 
 Segues link ViewControllers together, they don't pass along any data (except layout data). 
@@ -124,3 +125,8 @@ This technique can be used to provide [Dependency Injection](http://en.wikipedia
 
 
 You can find my example project here [Ashton-W/Example-SegueInjection](https://github.com/Ashton-W/Example-SegueInjection)
+
+---
+
+<blockquote class="twitter-tweet" lang="en"><p>I wrote about &#39;Dependency Injection Segues&#39;. <a href="https://twitter.com/hashtag/iOSDev?src=hash">#iOSDev</a>&#10;&#10;<a href="http://t.co/wO8git7Hvw">http://t.co/wO8git7Hvw</a></p>&mdash; Ashton (@AshtonDev) <a href="https://twitter.com/AshtonDev/status/590363094381002752">April 21, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
