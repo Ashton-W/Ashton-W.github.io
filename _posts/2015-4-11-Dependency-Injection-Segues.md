@@ -6,7 +6,7 @@ title: Dependency Injection Segues
 Segues link ViewControllers together, they don't pass along any data (except layout data). 
 ViewControllers are given a few chances to set up each other in methods like `prepareForSegue:sender:`. However we don't want to tightly couple our ViewControllers.
 
-It is debated that not much is gained from Segues if when in a prepare method, the viewController cast it to a known type and initialises it anyway. Especially if the segue is performed in code.
+It is debatable that not much is gained from Segues if when in a prepare method, the viewController cast it to a known type and initialises it anyway. Especially if the segue is performed in code.
 
 Here is an approach I've found successful at addressing this problem by using a **protocol**.
 
@@ -31,11 +31,13 @@ I prefer to move this logic into a category on `UIStoryboardSegue` like so:
 
 - (void)assignModel:(Model *)model
 {
+	// another category method for finding the right vc
     id<ModelAssignable> destination = [self destinationViewControllerConformingToProtocol:@protocol(ModelAssignable)];
     
     destination.model = model;
 }
 
+// be lazy and assign from source to destination automatically
 - (void)assignModel
 {
     if (NO == [self.sourceViewController conformsToProtocol:@protocol(ModelAssignable)]) {
@@ -115,6 +117,10 @@ Now `prepareForSegue:sender:` methods will look something like this:
     [segue assignModel:selectedModel];
 }
 ```
+
+---
+
+This technique can be used to provide [Dependency Injection](http://en.wikipedia.org/wiki/Dependency_injection) for other objects too. `NSManagedObjectContext`, `NSUserDefaults`, networking, etc.
 
 
 You can find my example project here [Ashton-W/Example-SegueInjection](https://github.com/Ashton-W/Example-SegueInjection)
