@@ -3,11 +3,10 @@ layout: post
 title: Dependency Injection Segues
 ---
 
-Segues link ViewControllers together however they don't provide us with a standard way to pass any data. This is a shame as it is an extremely convienient place to do so. So we have a tool to create and present our screens - how can we set it up with data in a convinient way to maximise the opportunity?
+Segues link ViewControllers together, they don't pass along any data (except layout data). 
+ViewControllers are given a few chances to set up each other in methods like `prepareForSegue:sender:`. However we don't want to tightly couple our ViewControllers.
 
-ViewControllers are given a few chances to set up each other in methods like `prepareForSegue:sender:` and their related counterparts. However we don't want to tightly couple our ViewControllers.
-
-It is debated that not much is gained from Segues if when in a prepare method, the viewController cast it to a known type and initialised anyway. Especially if the segue is performed in code.
+It is debated that not much is gained from Segues if when in a prepare method, the viewController cast it to a known type and initialises it anyway. Especially if the segue is performed in code.
 
 Here is an approach I've found successful at addressing this problem by using a **protocol**.
 
@@ -23,7 +22,7 @@ First define a protocol to indicate an object can be assigned a Model.
 @end
 ```
 
-You could stop there. In `prepareForSegue:` you can now simply check if the destination conforms to this protocol and if it does, assign the model object. Do this before any `segueIdentifier` checking – if you still have any.
+You could stop there. In `prepareForSegue:sender:` you can now simply check if the destination conforms to this protocol and if it does, assign the model object. Do this before any `segueIdentifier` checking – if you still have any.
 
 I prefer to move this logic into a category on `UIStoryboardSegue` like so:
 
@@ -51,7 +50,7 @@ I prefer to move this logic into a category on `UIStoryboardSegue` like so:
 @end
 ```
 
-You can avoid having to subclass container ViewControllers by also checking if the destination viewController is a UINavigationController, UISplitViewController, etc.
+You can avoid having to subclass container ViewControllers by also checking if the destination viewController is a `UINavigationController`, `UISplitViewController`, etc.
 
 ```objc
 @implementation UIStoryboardSegue (FindProtocol)
