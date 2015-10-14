@@ -13,45 +13,54 @@ The Breakpoint Navigator pane in Xcode has almost all the functions for creating
 
 # Types of Breakpoints 
 
-## All Exception breakpoint
+#### All Exception breakpoint
 
 Stop on any and all Exceptions.
 
-## Objective-C Exception breakpoint
+#### Objective-C Exception breakpoint
 
 Stop on Objective-C Exceptions, eg: `NSException`.
 
-## Swift Error breakpoint
+#### Swift Error breakpoint
 
 Stop on Swift Errors, e.g.: types conforming to `ErrorType`.
 
 New in *Xcode 7.1 beta 3*.
 
-## Test Failure breakpoint
+#### Test Failure breakpoint
 
 Stop when a Test fails. `XCTest` and compatible frameworks only.
 
-## Symbolic Breakpoints
+#### Symbolic Breakpoints
+
+![Symbolic Breakpoint on viewDidLoad]({{ site.url }}/assets/breakpoints/viewDidLoad.png)
 
 Stop on a Symbol. A Symbol in this context is a selector or method name, or a function name. Methods can be scoped to a class.
 
-If a symbol is found multiple times, like a selector implemented in more than one class, Xcode will allow you to expand your breakpoint in the navigator and control each of these sub-breakpoints. You may need to debug your app atleast once to find the symbols.
+If a symbol is found multiple times, like a selector implemented in more than one class, Xcode will allow you to expand your breakpoint in the navigator and control each of these sub-breakpoints.
+
+You may need to debug your app once to find the symbols. You should also restrict the modules to your own app or frameworks, since it will pick up all of *UIKit* too.
 
 Examples:  
-`viewDidLoad`  
-`[SKTLine drawHandlesInView]`  
-`people::Person::name()`  
-`_objc_msgForward`  
 
-# Advanced Options
+    viewDidLoad`  
+    [SKTLine drawHandlesInView]`  
+    people::Person::name()`  
+    _objc_msgForward`  
 
-## Conditions
+![Symbolic Breakpoint on viewDidLoad scoped to Banana app]({{ site.url }}/assets/breakpoints/viewDidLoad-edit.png)
+
+## Advanced Options
+
+![Editing a Breakpoint]({{ site.url }}/assets/breakpoints/edit.png)
+
+#### Conditions
 
 Evaluate an expression to determine if the breakpoint should pause or perform any actions.
 
 You can speed up your debugging by breaking when an array has 0 elements, or a string is nil, for example. Much better than adding temporary code to give you a branch to break inside with log statements.
 
-## Ignore
+#### Ignore
 
 Ignore a breakpoint until it has been hit a given number of times.
 
@@ -60,10 +69,14 @@ Ignore a breakpoint until it has been hit a given number of times.
 Actions allow you add Log Messages, Debugger Commands, and Sounds to your breakpoints.
 You can even do AppleScript and Shell Commands, if you want to.
 
-My favourite custom breakpoint is the **Reveal** dynamic library loading breakpoint.
-Automatically set up all apps you run in the simulator with the ability to inspect in Reveal. It's documented so I won't repeat it.
+The best part is that you can add multiple actions. So you can have a single breakpoint log a message that counts how many times it has been hit (with the `%H` macro) and also ribbits like a frog. :frog:
 
-## Automatically Continue
+![A Log Message breakpoint]({{ site.url }}/assets/breakpoints/message.png)
+
+My favourite custom breakpoint is the [**Reveal**](http://revealapp.com/) breakpoint.
+Automatically set up all apps you run in the simulator with the ability to inspect views in Reveal. It's [documented](http://support.revealapp.com/kb/getting-started/integrating-reveal-load-reveal-without-changing-your-xcode-project) so I won't repeat it.
+
+#### Automatically Continue
 
 Under *Options* you will see 'Automatically continue after evaluating actions', which does what it says, the breakpoint will keep running the app.
 
@@ -81,6 +94,8 @@ You could fix this with some git hooks if you really wanted to use this feature,
 
 # User Breakpoints
 
+![User Breakpoints]({{ site.url }}/assets/breakpoints/user.png)
+
 Breakpoints can be made available in all projects by moving them to your User Breakpoints. I highly recommend using this setting for all breakpoints not referencing a specific project.
 
-I've made *my* User Breakpoints publicly available in this gist. I don't use them all every day, but I feel this is a good collection of breakpoints everyone should start with.
+I've made *my* User Breakpoints publicly available in [this gist](https://gist.github.com/Ashton-W/5c1ede17f8cec1f8b529). I don't use them all every day, but I feel this is a good collection of breakpoints everyone should start with.
