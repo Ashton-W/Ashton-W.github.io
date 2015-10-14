@@ -13,7 +13,7 @@ theme:
   subtitle: iOS Developer
   avatar: avatar.png
   gravatar: e4a4976684e44675d92688b65cac7091 # email md5 hash
-  description: "A website with blog posts and pages" # used by search engines
+  description: "Technical Blog posts and tutorials by iOS Developer Ashton Williams " # used by search engines
   # Header and footer text
   header_text:
   footer_text:
@@ -37,7 +37,7 @@ theme:
   # Open the "_sass > base" folder, and open "_variables.scss"
 
 # PAGINATION
-paginate: 5
+paginate: 100
 paginate_path: "blog/page:num"
 
 gems:
