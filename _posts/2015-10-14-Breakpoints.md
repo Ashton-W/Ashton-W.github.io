@@ -5,6 +5,8 @@ title: Xcode Breakpoints
 
 Xcode has many great debugging features, the most basic of which are **Breakpoints**. Let's take a deeper look at **Breakpoints** in Xcode.
 
+If you are here to get my installable collection of Breakpoints, <a href="#mybreakpoints" >scroll down to *My Breakpoints*</a>.
+
 # Breakpoint Navigator
 
 The Breakpoint Navigator pane in Xcode has almost all the functions for creating and managing your breakpoints.
@@ -99,3 +101,9 @@ You could fix this with some git hooks if you really wanted to use this feature,
 Breakpoints can be made available in all projects by moving them to your User Breakpoints. I highly recommend using this setting for all breakpoints not referencing a specific project.
 
 I've made *my* User Breakpoints publicly available in [this gist](https://gist.github.com/Ashton-W/5c1ede17f8cec1f8b529). I don't use them all every day, but I feel this is a good collection of breakpoints everyone should start with.
+
+---
+
+<a id="mybreakpoints"><a/>
+
+<script src="https://gist.github.com/Ashton-W/5c1ede17f8cec1f8b529.js?file=README.md"></script>
