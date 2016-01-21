@@ -3,7 +3,7 @@ layout: post
 title: Asynchronous Testing
 ---
 
-Asynchronous Testing was made much easier in Xcode with the additon of expectations and the `XCTestExpectation` class.
+Asynchronous Testing was made much easier in Xcode with the introduction of expectations and the `XCTestExpectation` class.
 In addition to the basic expectation support included are helper methods for testing KVO, Notifications, and using Predicates.
 Expectations are created by helper methods on `XCTestCase`.
 
@@ -25,7 +25,7 @@ func testExample() {
 expectationWithDescription(description:)
 ```
 
-This is the basic expectation, you call fulfill on it 
+This is the basic expectation, you call `fulfill()` on it.
 
 ```swift
 waitForExpectationsWithTimeout(timeout:, handler:)
@@ -45,18 +45,24 @@ keyValueObservingExpectationForObject(objectToObserve:, keyPath:, handler:)
 ```
 
 If testing KVO compliance definitely use a KVO expectation. Even if not explicitly testing KVO consider if your test is interacting with a KVO compliant object.
-Expectations with optional handlers will fulfill themselves if not provided.
+`expectedValue` can be `nil` to expect the value to change to any other value.
+Expectations with optional handlers will fulfill themselves if not provided. If you use your own handler return `true` to fulfill the expectation.
 
 ### Notification Expectations
 
 ```swift
-expectationForNotification(notificationName:, object objectToObserve:, handler:)
+expectationForNotification(notificationName:, object:, handler:)
 ```
+Expect an `NSNotification` in one line. If you don't specify a handler it gets fulfilled by the first matching notification from the specified object, otherwise the handler should return `true` to fulfill the expectation.
 
 ### Predicate Expectations
 
 ```swift
-expectationForPredicate(predicate:, evaluatedWithObject object:, handler:)
+expectationForPredicate(predicate:, evaluatedWithObject:, handler:)
 ```
 
-I wish there was a delegate expectation helper in the standard library, it would tie things off nicely and have the most common asynchronous tests covered. An exercise for the reader, or file a radar :)
+During test the `NSPredicate` will be periodically evaluated, once it is true the expectation will be fulfilled, unless you specify a handler in which case your handler has to return `true` as well.
+
+---
+
+That's it for the standard expectations. I wish there was a delegate expectation helper in the standard library, it would tie things off nicely and have the most common asynchronous tests covered. I have [a quick implementation of one here](https://gist.github.com/Ashton-W/19d0025e3ef43ae4c386), but one included in XCTest would be great.
