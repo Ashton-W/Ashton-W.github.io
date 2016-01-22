@@ -61,7 +61,7 @@ Expect an `NSNotification` in one line. If you don't specify a handler it gets f
 expectationForPredicate(predicate:, evaluatedWithObject:, handler:)
 ```
 
-During test the `NSPredicate` will be periodically evaluated, once it is true the expectation will be fulfilled, unless you specify a handler in which case your handler has to return `true` as well.
+During test the `NSPredicate` will be periodically evaluated. Once it is true the expectation will be fulfilled, unless you specify a handler in which case your handler has to return `true` as well.
 
 ---
 
