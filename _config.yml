@@ -39,10 +39,6 @@ theme:
   # Colors, typography and padding
   # Open the "_sass > base" folder, and open "_variables.scss"
 
-# PAGINATION
-paginate: 100
-paginate_path: "blog/page:num"
-
 gems:
  - jemoji
 
