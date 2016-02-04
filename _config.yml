@@ -42,6 +42,7 @@ theme:
 gems:
  - jemoji
  - jekyll-gist
+ - jekyll-seo-tag
 
 # BUILD SETTINGS
 markdown: kramdown
