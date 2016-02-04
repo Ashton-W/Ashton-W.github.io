@@ -42,10 +42,13 @@ theme:
 twitter:
   username: AshtonDev
 
+logo: 
+
 gems:
  - jemoji
  - jekyll-gist
  - jekyll-seo-tag
+ - jekyll-feed
 
 # BUILD SETTINGS
 markdown: kramdown
