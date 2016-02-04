@@ -105,5 +105,4 @@ I've made *my* User Breakpoints publicly available in [this gist](https://gist.g
 ---
 
 <a id="mybreakpoints"><a/>
-
-<script src="https://gist.github.com/Ashton-W/5c1ede17f8cec1f8b529.js?file=README.md"></script>
+{% gist Ashton-W/5c1ede17f8cec1f8b529 README.md %}

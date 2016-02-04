@@ -41,6 +41,7 @@ theme:
 
 gems:
  - jemoji
+ - jekyll-gist
 
 # BUILD SETTINGS
 markdown: kramdown
