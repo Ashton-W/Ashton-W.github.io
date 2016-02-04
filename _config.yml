@@ -39,6 +39,9 @@ theme:
   # Colors, typography and padding
   # Open the "_sass > base" folder, and open "_variables.scss"
 
+twitter:
+  username: AshtonDev
+
 gems:
  - jemoji
  - jekyll-gist
