@@ -3,7 +3,7 @@ layout: post
 title: Configuration Resources
 ---
 
-You can create different configurations of your app for different purposes, for example: Test and Release. Release is your production configuration of the app, but Test might include debug features not meant for the AppStore.
+You can create different configurations of your app for different purposes, for example: Test and Release. Release is your production configuration of the app, while Test includes debug features not meant for the AppStore.
 
 To achieve this you will want to leverage configurations in Xcode to create variants of your app in addition to the default Debug and Release builds.
 Build settings can be changed per configuration but resources can't - they are assigned to targets in the Xcode project.
