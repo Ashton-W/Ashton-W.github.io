@@ -3,6 +3,9 @@ default:
   layout: post
   title: Frontmatter missing
 
+post:
+  extension: md
+
 # MY WEIRD HACKS
 fork_post_url: "https://github.com/Ashton-W/Ashton-W.github.io/blob/master"
 
@@ -36,18 +39,22 @@ theme:
   # Colors, typography and padding
   # Open the "_sass > base" folder, and open "_variables.scss"
 
-# PAGINATION
-paginate: 100
-paginate_path: "blog/page:num"
+twitter:
+  username: AshtonDev
+
+logo: 
 
 gems:
  - jemoji
+ - jekyll-gist
+ - jekyll-seo-tag
+ - jekyll-feed
 
 # BUILD SETTINGS
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis"]
-highlighter: pygments
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
 sass:
   sass_dir: _sass
   style: :compressed

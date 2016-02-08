@@ -10,7 +10,7 @@ layout: default
 
   <div class="posts">
   <div class="post-teaser">
-    {% for post in paginator.posts %}
+    {% for post in site.posts %}
     
       <header>
         <h1>
@@ -23,23 +23,5 @@ layout: default
     {% endfor %}
     </div>
   </div>
-
-  {% if paginator.total_pages > 1 %}
-  <div class="pagination">
   
-    {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="button" >
-      <i class="fa fa-chevron-left"></i> 
-      {{ site.theme.str_prev }}
-    </a>
-    {% endif %}
-
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="button" >
-      {{ site.theme.str_next }} 
-      <i class="fa fa-chevron-right"></i>
-    </a>
-    {% endif %}
-  </div>
-  {% endif %}
 </div>
