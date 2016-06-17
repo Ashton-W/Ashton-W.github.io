@@ -3,9 +3,9 @@ layout: post
 title: Xcode Breakpoints
 ---
 
-🎙 I also talked about Breakpoints on the iOhYes podcast http://5by5.tv/iohyes/88    
-🏫 And at Melbourne Cocoaheads https://vimeo.com/133252289    
-📑 Or just look at the gist https://gist.github.com/Ashton-W/5c1ede17f8cec1f8b529
+🎙 I also talked about Breakpoints on the [iOhYes podcast episode 88](http://5by5.tv/iohyes/88)    
+📹 And on camear at [Melbourne Cocoaheads](https://vimeo.com/133252289)    
+📑 Or just look at [the gist](https://gist.github.com/Ashton-W/5c1ede17f8cec1f8b529)
 
 Xcode has many great debugging features, the most basic of which are **Breakpoints**. Let's take a deeper look at **Breakpoints** in Xcode.
 
