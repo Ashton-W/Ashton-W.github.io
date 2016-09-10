@@ -10,7 +10,7 @@ post:
 fork_post_url: "https://github.com/Ashton-W/Ashton-W.github.io/blob/master"
 
 # THEME-SPECIFIC CONFIGURATION
-theme:
+theme_settings:
   # Meta
   title: Ashton-W
   subtitle: iOS Developer
