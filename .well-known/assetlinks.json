@@ -2,7 +2,7 @@
   "relation": ["delegate_permission/common.handle_all_urls"],
   "target": {
     "namespace": "android_app",
-    "package_name": "net.ashton-w.applinks",
+    "package_name": "net.ashtonw.applinks",
     "sha256_cert_fingerprints":
     ["14:C1:8A:22:35:9C:CF:93:AD:44:68:57:1B:53:E5:A8:6F:F4:83:72:6D:24:BB:6D:70:60:36:BC:EE:F1:92:93"]
   }
